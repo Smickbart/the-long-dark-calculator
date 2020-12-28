@@ -1,0 +1,210 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  background: url("../images/backgroundSmall.jpg") center/cover no-repeat;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: #f2f2f2;
+}
+
+button {
+  font-size: 1rem;
+  font-family: inherit;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.header {
+  margin: 2rem 0;
+}
+
+.header__heading {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.main {
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.select {
+  display: block;
+  margin: 0 auto;
+}
+
+.heading {
+  margin-bottom: 1rem;
+}
+
+.label {
+  background-color: rgba(0, 51, 102, 0.8);
+  width: 12rem;
+  height: 6rem;
+  font-size: 1.4rem;
+  padding-top: 2.3rem;
+}
+
+.label__percentage {
+  background-color: transparent;
+}
+
+.label__difficulty {
+  display: inline-block;
+}
+
+.label__difficulty--pilgrim {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 51, 102, 0.7)), to(rgba(0, 204, 102, 0.7)));
+  background-image: linear-gradient(to bottom right, rgba(0, 51, 102, 0.7), rgba(0, 204, 102, 0.7));
+  margin-right: 2rem;
+}
+
+.label__difficulty--voyageur {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 204, 102, 0.7)), to(rgba(204, 204, 0, 0.7)));
+  background-image: linear-gradient(to bottom right, rgba(0, 204, 102, 0.7), rgba(204, 204, 0, 0.7));
+}
+
+.label__difficulty--stalker {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(204, 204, 0, 0.7)), to(rgba(230, 138, 0, 0.7)));
+  background-image: linear-gradient(to bottom right, rgba(204, 204, 0, 0.7), rgba(230, 138, 0, 0.7));
+  margin-right: 2rem;
+}
+
+.label__difficulty--interloper {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(230, 138, 0, 0.7)), to(rgba(204, 0, 0, 0.7)));
+  background-image: linear-gradient(to bottom right, rgba(230, 138, 0, 0.7), rgba(204, 0, 0, 0.7));
+}
+
+.label__location {
+  display: inline-block;
+}
+
+.label__location--indoors {
+  margin-right: 2rem;
+}
+
+.label__location--outdoors {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #4d4d4d;
+}
+
+.input {
+  text-align: right;
+}
+
+.input__item {
+  width: 8rem;
+  height: 4rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+.input__difficulty {
+  display: none;
+}
+
+.input__difficulty:checked + .label__difficulty {
+  padding-top: 2rem;
+  border: 3px solid white;
+}
+
+.input__location {
+  display: none;
+}
+
+.input__location:checked + .label__location {
+  padding-top: 2rem;
+  border: 3px solid white;
+}
+
+.input__location:checked + .label__location--outdoors {
+  padding-top: 2rem;
+  border: 3px solid orange;
+}
+
+.percent-symbol {
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: #b3daff;
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.btn :active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.para {
+  margin-top: 1rem;
+}
+
+.para__result {
+  font-size: 3rem;
+}
+
+.para__error {
+  background-color: rgba(255, 0, 0, 0.6);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  .container__item--list, .container__item--percentage {
+    display: inline-block;
+  }
+  .container__item--list {
+    margin-right: 2rem;
+  }
+  .container__difficulty--split {
+    display: inline-block;
+  }
+  .label__difficulty {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .header {
+    margin: 1rem 0;
+  }
+  .container {
+    margin-bottom: .5rem;
+  }
+  .container__location {
+    float: left;
+    margin-left: 10%;
+  }
+  .container__result {
+    display: inline-block;
+    padding-top: 2rem;
+  }
+}
+/*# sourceMappingURL=app.css.map */

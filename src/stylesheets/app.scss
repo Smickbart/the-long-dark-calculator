@@ -1,0 +1,240 @@
+$color-font-default: #f2f2f2;
+$color-font-dark: #4d4d4d;
+$color-background-dark: #003366;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    background: url("../images/backgroundSmall.jpg") center/cover no-repeat;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: $color-font-default;    
+}
+
+button {
+    font-size: 1rem;
+    font-family: inherit;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.header {
+    margin: 2rem 0;
+
+    &__heading {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+}
+
+.main {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.select {
+    display: block;
+    margin: 0 auto;
+
+    &__item {
+
+    }
+}
+
+.heading {
+    margin-bottom: 1rem;
+}
+
+.label {
+    background-color: rgba($color-background-dark, .8);
+    width: 12rem;
+    height: 6rem;
+    font-size: 1.4rem;
+    padding-top: 2.3rem;
+
+    &__percentage {
+        background-color: transparent;
+    }
+
+    &__difficulty {
+        display: inline-block;
+
+        &--pilgrim {
+            background-image: linear-gradient(to bottom right, rgba($color-background-dark, .7), rgba(#00cc66, .7));
+            margin-right: 2rem;
+        }
+        &--voyageur {
+            background-image: linear-gradient(to bottom right, rgba(#00cc66, .7), rgba(#cccc00, .7));
+        }
+        &--stalker {
+            background-image: linear-gradient(to bottom right, rgba(#cccc00, .7), rgba(#e68a00, .7));
+            margin-right: 2rem;
+        }
+        &--interloper {
+            background-image: linear-gradient(to bottom right, rgba(#e68a00, .7), rgba(#cc0000, .7));
+        }
+    }
+
+    &__location {
+        display: inline-block;
+
+        &--indoors {
+            margin-right: 2rem;
+        }
+
+        &--outdoors {
+            background-color: rgba(white, .8); 
+            color: $color-font-dark;
+        }
+    }
+}
+
+.input {
+    text-align: right;
+
+    &__item {
+        width: 8rem;
+        height: 4rem;
+        margin-left: 1rem;
+
+        font-size: 2rem;
+    }
+    
+    &__difficulty {
+        display: none;
+
+        &:checked+.label__difficulty{
+            padding-top: 2rem;
+            border: 3px solid white;
+        }
+
+    }
+
+    &__location {
+        display: none;
+
+        &:checked+.label__location{
+            padding-top: 2rem;
+            border: 3px solid white;
+
+            &--outdoors {
+                padding-top: 2rem;
+                border: 3px solid orange;
+            }
+        }
+    }
+}
+
+.percent-symbol {
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: #b3daff;
+    padding: 1.5rem 3rem;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    :active {
+        transform: scale(.9);
+    }
+}
+
+.para {
+    margin-top: 1rem;
+
+    &__result {
+        font-size: 3rem;
+    }
+
+    &__error {
+        background-color: rgba(red, .6);
+        font-size: 1.5rem;    
+        margin-bottom: 1rem;
+    }
+}
+
+// ********************************** //
+//  *********** UTILITIES *********** //
+// ********************************** //
+
+.hidden {
+    display: none;
+}
+
+
+// ************************************* //
+// *********** MEDIA QUERIES *********** //
+// ************************************* //
+
+
+@media screen and (min-width: 481px) {
+    .container {
+
+        &__item {
+
+            &--list,
+            &--percentage {
+                display: inline-block
+            }
+
+            &--list {
+                margin-right: 2rem;
+            }
+       }
+
+       &__difficulty {
+
+            &--split {
+                display: inline-block;
+            }
+       }       
+    }
+
+    .label {
+
+        &__difficulty {
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+@media screen and (max-height: 450px) {
+    .header {
+        margin: 1rem 0;
+    }  
+
+    .container {
+        margin-bottom: .5rem;
+
+        &__location {
+            float: left;
+            margin-left: 10%;
+        }
+ 
+        &__result {
+            display: inline-block;
+            padding-top: 2rem;
+        }
+    }
+}
