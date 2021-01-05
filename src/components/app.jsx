@@ -103,9 +103,26 @@ class App extends Component {
     return (
       <div className="app">
         <header className="header">
-          <h1 className="header__heading">Food Decay Calculator</h1>
+          <h1 className="header__heading">Food Decay <span className="header__span">Calculator</span></h1>
         </header>
+        <nav className="nav">
+          <input type="checkbox" id="navigation" name="navigation" className="nav__check" />  
+          <label for="navigation" className="nav__btn">
+            <div className="nav__hamburger"></div>
+          </label>                  
+          <div className="nav__menu">
+            <ul className="nav__list">
+              <li className="nav__item"><a className="nav__link">about</a></li>
+              <li className="nav__item"><a className="nav__link">contact</a></li>
+            </ul>
+          </div>
+        </nav>
         <main className="main">
+          <div className="info-box">
+            <p className="info-box__text">
+              
+            </p>
+          </div>
           <p className="para para__error hidden" id="error"></p>
           <Item 
             foodList={foodList}
