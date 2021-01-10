@@ -28,7 +28,7 @@ button {
 }
 
 .header {
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .header__heading {
@@ -135,121 +135,128 @@ button {
 
 .nav__link {
   display: inline-block;
-  padding: .25rem .5rem;
+  width: 16rem;
+  padding: .5rem 0;
   background-color: white;
   color: #4d4d4d;
-}
-
-.main {
-  text-align: center;
-}
-
-.container {
-  text-align: center;
-  font-weight: 400;
-  margin-bottom: 1rem;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
-.select {
-  display: block;
-  margin: 0 auto;
+.main {
+  position: relative;
+  text-align: center;
 }
 
-.heading {
+.error {
+  background-color: rgba(255, 0, 0, 0.6);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.label {
-  background-color: rgba(0, 51, 102, 0.8);
+.item {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.item__list {
+  margin-bottom: .5rem;
+}
+
+.item__input {
+  text-align: right;
+  max-width: 10rem;
+}
+
+.difficulty__heading {
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.difficulty__input {
+  display: none;
+}
+
+.difficulty__input:checked + .difficulty__label {
+  padding-top: 1.75rem;
+  border: 3px solid white;
+}
+
+.difficulty__buttons--top {
+  margin-bottom: 1rem;
+}
+
+.difficulty__label {
+  display: inline-block;
   width: 11rem;
   height: 5.5rem;
   font-size: 1.4rem;
   padding-top: 2.05rem;
 }
 
-.label__percentage {
-  background-color: transparent;
-}
-
-.label__difficulty {
-  display: inline-block;
-}
-
-.label__difficulty--pilgrim {
+.difficulty__label--pilgrim {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 51, 102, 0.7)), to(rgba(0, 204, 102, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(0, 51, 102, 0.7), rgba(0, 204, 102, 0.7));
   margin-right: 2rem;
 }
 
-.label__difficulty--voyageur {
+.difficulty__label--voyageur {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 204, 102, 0.7)), to(rgba(204, 204, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(0, 204, 102, 0.7), rgba(204, 204, 0, 0.7));
 }
 
-.label__difficulty--stalker {
+.difficulty__label--stalker {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(204, 204, 0, 0.7)), to(rgba(230, 138, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(204, 204, 0, 0.7), rgba(230, 138, 0, 0.7));
   margin-right: 2rem;
 }
 
-.label__difficulty--interloper {
+.difficulty__label--interloper {
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(230, 138, 0, 0.7)), to(rgba(204, 0, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(230, 138, 0, 0.7), rgba(204, 0, 0, 0.7));
 }
 
-.label__location {
-  display: inline-block;
+.location {
+  margin-bottom: 2rem;
 }
 
-.label__location--indoors {
+.location__heading {
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.location__input {
+  display: none;
+}
+
+.location__input:checked + .location__label {
+  padding-top: 1.75rem;
+  border: 3px solid white;
+}
+
+.location__input:checked + .location__label--outdoors {
+  border: 3px solid orange;
+}
+
+.location__label {
+  display: inline-block;
+  width: 11rem;
+  height: 5.5rem;
+  font-size: 1.4rem;
+  padding-top: 2.05rem;
+}
+
+.location__label--indoors {
+  background-color: rgba(0, 51, 102, 0.8);
   margin-right: 2rem;
 }
 
-.label__location--outdoors {
+.location__label--outdoors {
   background-color: rgba(255, 255, 255, 0.8);
   color: #4d4d4d;
 }
 
-.input {
-  text-align: right;
-}
-
-.input__item {
-  width: 8rem;
-  height: auto;
-  margin-left: 1rem;
-  font-size: 2rem;
-}
-
-.input__difficulty {
-  display: none;
-}
-
-.input__difficulty:checked + .label__difficulty {
-  padding-top: 1.75rem;
-  border: 3px solid white;
-}
-
-.input__location {
-  display: none;
-}
-
-.input__location:checked + .label__location {
-  padding-top: 1.75rem;
-  border: 3px solid white;
-}
-
-.input__location:checked + .label__location--outdoors {
-  padding-top: 1.75rem;
-  border: 3px solid orange;
-}
-
-.percent-symbol {
-  font-size: 2rem;
-}
-
-.btn {
+.result__btn {
   background-color: #b3daff;
   padding: 1rem 2rem;
   font-size: 1.5rem;
@@ -257,64 +264,192 @@ button {
   text-transform: uppercase;
 }
 
-.btn :active {
+.result__btn :active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-.para {
+.result__text {
   margin-top: 1rem;
-}
-
-.para__result {
   font-size: 3rem;
 }
 
-.para__error {
-  background-color: rgba(255, 0, 0, 0.6);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.popup {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup__content {
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  padding: 3rem;
+  background-color: white;
+  color: #4d4d4d;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.popup__heading {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.popup__text {
+  font-size: 1.2rem;
+}
+
+.popup__close:link, .popup__close:visited {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.popup:target {
+  visibility: visible;
 }
 
 .hidden {
   display: none;
 }
 
+.u-margin-bottom-sml {
+  margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 481px) {
-  .container__item--list, .container__item--percentage {
-    display: inline-block;
+  .header__heading {
+    font-size: 6rem;
   }
-  .container__item--list {
-    margin-right: 2rem;
+  .error {
+    font-size: 2rem;
   }
-  .container__difficulty--split {
-    display: inline-block;
+  .item__list {
+    margin-bottom: 1rem;
   }
-  .label__difficulty {
-    margin: 0 1rem;
+  .item__input {
+    font-size: 2rem;
+  }
+  .difficulty {
+    margin-bottom: 3rem;
+  }
+  .difficulty__heading {
+    font-size: 2rem;
+  }
+  .difficulty__input:checked + .difficulty__label {
+    padding-top: 2.775rem;
+    border: 3px solid white;
+  }
+  .difficulty__label {
+    width: 16.5rem;
+    height: 8.25rem;
+    font-size: 2.1rem;
+    padding-top: 3.075rem;
+  }
+  .location {
+    margin-bottom: 3rem;
+  }
+  .location__heading {
+    font-size: 2rem;
+  }
+  .location__input:checked + .location__label {
+    padding-top: 2.775rem;
+    border: 3px solid white;
+  }
+  .location__input:checked + .location__label--outdoors {
+    border: 3px solid orange;
+  }
+  .location__label {
+    width: 16.5rem;
+    height: 8.25rem;
+    font-size: 2.1rem;
+    padding-top: 3.075rem;
+  }
+  .result__btn {
+    padding: 2rem 4rem;
+    font-size: 2rem;
+  }
+  .result__text {
+    margin-top: 2rem;
+    font-size: 4.5rem;
+  }
+  .popup__heading {
+    font-size: 3rem;
+  }
+  .popup__text {
+    font-size: 1.8rem;
   }
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (min-width: 1024px) {
   .header {
-    margin: 1rem 0;
+    margin-bottom: 6rem;
   }
-  .heading {
-    font-size: 1rem;
+  .header__span {
+    display: inline;
   }
-  .para__error {
-    font-size: 1rem;
+  .nav__check {
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
   }
-  .container {
-    margin-bottom: .5rem;
+  .nav__check:checked ~ .nav__menu {
+    width: 37.5rem;
   }
-  .container__location {
-    float: left;
-    margin-left: 10%;
+  .nav__btn {
+    top: 4rem;
+    right: 4rem;
+    width: 6rem;
+    height: 6rem;
   }
-  .container__result {
+  .nav__hamburger::before {
+    bottom: 12px;
+  }
+  .nav__hamburger::after {
+    top: 12px;
+  }
+  .item {
+    margin-bottom: 4rem;
+  }
+  .item__list {
+    font-size: 2rem;
+    margin-right: 2rem;
+  }
+  .item__percentage {
     display: inline-block;
-    padding-top: 1rem;
+  }
+  .difficulty__heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .difficulty__buttons {
+    display: inline-block;
+  }
+  .difficulty__buttons--top {
+    margin-right: 2rem;
+  }
+  .location {
+    margin-bottom: 6rem;
+  }
+  .location__heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .result__text {
+    margin-top: 4rem;
+    font-size: 5rem;
   }
 }
 /*# sourceMappingURL=app.css.map */

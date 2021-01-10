@@ -3,18 +3,20 @@ import Item from "./item";
 import Difficulty from "./difficulty";
 import Location from "./location";
 import Result from "./result";
-import foodDecay from "../data/foodDecay.json"
+import foodDecay from "../data/foodDecay.json";
+import Navigation from "./navigation";
+import Popup from "./popup";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       "food": "",
       "percentage": undefined,
       "difficulty": undefined,
       "location": undefined,
-      "result": undefined
+      "result": undefined,
+      "popup": ""
     }
   }
 
@@ -75,55 +77,51 @@ class App extends Component {
     const location = this.state.location;
     const result = Math.floor(percentage / (difficulty * location));
     const food = this.state.food;
+    let popup = this.state.popup.slice();
 
-    console.log(location);
+    const id = e.target.id;
 
-    //error handling
-    if(food === "-- Select food --"){
-      this.handleError("You haven't selected a food item.");
-      this.setState(state => state.result = "");
-    } else if(!result){
-      if(!percentage){
-        this.handleError("Please enter the percentage of your item.");
-      }else if(!difficulty) {
-        this.handleError("Please choose your difficulty level.");
-      }else if(!location){
-        this.handleError("Please choose the location you've stored the item.");
-      }else if(result === 0){
+    if(id === "aboutLink") {
+      console.log("link clicked");
+      popup = "about";
+      this.setState(state => state.popup = popup);
+    } else if (id === "contactLink") {
+      popup = "contact";
+      this.setState(state => state.popup = popup);
+    } else {
+      //error handling
+      if(food === "-- Select food --"){
+        this.handleError("You haven't selected a food item.");
+        this.setState(state => state.result = "");
+      } else if(!result){
+        if(!percentage){
+          this.handleError("Please enter the percentage of your item.");
+        }else if(!difficulty) {
+          this.handleError("Please choose your difficulty level.");
+        }else if(!location){
+          this.handleError("Please choose the location you've stored the item.");
+        }else if(result === 0){
+          this.setState(state => state.result = result + " days");
+        }
+      }else{
         this.setState(state => state.result = result + " days");
       }
-    }else{
-      this.setState(state => state.result = result + " days");
-    }
+    }    
   }
 
   render() {
     const foodList = foodDecay.map(item => item.food);
 
     return (
-      <div className="app">
+      <div id="app" className="app">
         <header className="header">
           <h1 className="header__heading">Food Decay <span className="header__span">Calculator</span></h1>
         </header>
-        <nav className="nav">
-          <input type="checkbox" id="navigation" name="navigation" className="nav__check" />  
-          <label for="navigation" className="nav__btn">
-            <div className="nav__hamburger"></div>
-          </label>                  
-          <div className="nav__menu">
-            <ul className="nav__list">
-              <li className="nav__item"><a className="nav__link">about</a></li>
-              <li className="nav__item"><a className="nav__link">contact</a></li>
-            </ul>
-          </div>
-        </nav>
+        <Navigation 
+          onClick={this.handleClick}
+        />
         <main className="main">
-          <div className="info-box">
-            <p className="info-box__text">
-              
-            </p>
-          </div>
-          <p className="para para__error hidden" id="error"></p>
+          <p className="error hidden" id="error"></p>
           <Item 
             foodList={foodList}
             onChange={this.handleChange}
@@ -139,6 +137,9 @@ class App extends Component {
             onClick={this.handleClick}
           />
         </main>
+        <Popup 
+          heading={this.state.popup}
+        />
       </div>
     );
   }
