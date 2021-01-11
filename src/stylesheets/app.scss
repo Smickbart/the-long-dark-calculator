@@ -346,7 +346,7 @@ button {
 // ************************************* //
 
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (min-height: 721px) {
 
     .header {
         &__heading {
@@ -439,7 +439,7 @@ button {
 
 @media screen and (min-width: 1024px) {
     .header {
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
         &__span {
             display: inline;
         }
@@ -476,7 +476,7 @@ button {
     }
 
     .item {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
 
         &__list {
             font-size: 2rem;
@@ -504,7 +504,7 @@ button {
     }
 
     .location {
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
 
         &__heading {
             font-size: 3rem;
@@ -514,8 +514,58 @@ button {
 
     .result {
         &__text {
-            margin-top: 4rem;
+            margin-top: 2rem;
             font-size: 5rem;
+        }
+    }
+}
+
+@media screen and (max-height: 720px) {
+    .header {
+        &__span {
+            display: inline;
+        }
+    }
+
+    .item {
+        &__list {
+            margin-right: 1rem;
+        }
+
+        &__percentage {
+            display: inline-block;
+            font-size: 1.4rem;
+        }
+
+        &__input {
+            font-size: 1.4rem;
+        }
+    }
+
+    .difficulty {
+        display: inline-block;
+        margin-right: 8rem;
+    }
+
+    .location {
+        display: inline-block;
+
+        &__label {
+            display: block;
+
+            &--indoors {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .result {
+        &__btn {
+            padding: .7rem 1.4rem;
+        }
+
+        &__text {
+            font-size: 2.5rem;
         }
     }
 }

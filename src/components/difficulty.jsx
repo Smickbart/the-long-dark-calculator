@@ -12,7 +12,7 @@ class Difficulty extends Component {
             <input className="difficulty__input" type="radio" id="voyageur" name="difficulty" value="0.8" onChange={this.props.onChange} />
             <label className="difficulty__label difficulty__label--voyageur" for="voyageur">Voyaguer</label>
           </div>
-          <div className="difficulty__buttons difficulty__buttons--top">            
+          <div className="difficulty__buttons difficulty__buttons--bottom">            
             <input className="difficulty__input" type="radio" id="stalker" name="difficulty" value="1" onChange={this.props.onChange} />
             <label className="difficulty__label difficulty__label--stalker" for="stalker">Stalker</label>            
             <input className="difficulty__input" type="radio" id="interloper" name="difficulty" value="2" onChange={this.props.onChange} />

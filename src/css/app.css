@@ -329,7 +329,7 @@ button {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (min-height: 721px) {
   .header__heading {
     font-size: 6rem;
   }
@@ -395,7 +395,7 @@ button {
 
 @media screen and (min-width: 1024px) {
   .header {
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
   }
   .header__span {
     display: inline;
@@ -421,7 +421,7 @@ button {
     top: 12px;
   }
   .item {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
   .item__list {
     font-size: 2rem;
@@ -441,15 +441,50 @@ button {
     margin-right: 2rem;
   }
   .location {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
   .location__heading {
     font-size: 3rem;
     margin-bottom: 2rem;
   }
   .result__text {
-    margin-top: 4rem;
+    margin-top: 2rem;
     font-size: 5rem;
+  }
+}
+
+@media screen and (max-height: 720px) {
+  .header__span {
+    display: inline;
+  }
+  .item__list {
+    margin-right: 1rem;
+  }
+  .item__percentage {
+    display: inline-block;
+    font-size: 1.4rem;
+  }
+  .item__input {
+    font-size: 1.4rem;
+  }
+  .difficulty {
+    display: inline-block;
+    margin-right: 8rem;
+  }
+  .location {
+    display: inline-block;
+  }
+  .location__label {
+    display: block;
+  }
+  .location__label--indoors {
+    margin-bottom: 1rem;
+  }
+  .result__btn {
+    padding: .7rem 1.4rem;
+  }
+  .result__text {
+    font-size: 2.5rem;
   }
 }
 /*# sourceMappingURL=app.css.map */
