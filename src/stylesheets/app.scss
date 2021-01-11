@@ -520,7 +520,7 @@ button {
     }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 600px) and (orientation: landscape) {
     .header {
         &__span {
             display: inline;
