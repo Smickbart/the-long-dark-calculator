@@ -329,7 +329,7 @@ button {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 481px) and (min-height: 721px) {
+@media screen and (min-width: 481px) {
   .header__heading {
     font-size: 6rem;
   }
@@ -453,7 +453,7 @@ button {
   }
 }
 
-@media screen and (max-height: 720px) {
+@media screen and (max-height: 600px) {
   .header__span {
     display: inline;
   }

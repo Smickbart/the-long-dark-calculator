@@ -346,7 +346,7 @@ button {
 // ************************************* //
 
 
-@media screen and (min-width: 481px) and (min-height: 721px) {
+@media screen and (min-width: 481px) {
 
     .header {
         &__heading {
@@ -520,7 +520,7 @@ button {
     }
 }
 
-@media screen and (max-height: 720px) {
+@media screen and (max-height: 600px) {
     .header {
         &__span {
             display: inline;
