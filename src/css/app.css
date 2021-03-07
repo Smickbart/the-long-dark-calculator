@@ -460,6 +460,7 @@ button {
   }
   .location {
     display: inline-block;
+    margin-bottom: .5rem;
   }
   .location__label {
     display: block;
