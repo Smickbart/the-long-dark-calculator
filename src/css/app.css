@@ -3,8 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
@@ -14,8 +13,7 @@ html {
 }
 
 body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   color: #f2f2f2;
 }
@@ -68,14 +66,12 @@ button {
 
 .nav__check:checked + .nav__btn .nav__hamburger::before {
   bottom: 0px;
-  -webkit-transform: rotate(-315deg);
-          transform: rotate(-315deg);
+  transform: rotate(-315deg);
 }
 
 .nav__check:checked + .nav__btn .nav__hamburger::after {
   top: 0px;
-  -webkit-transform: rotate(315deg);
-          transform: rotate(315deg);
+  transform: rotate(315deg);
 }
 
 .nav__hamburger {
@@ -86,7 +82,6 @@ button {
   width: 55%;
   background-color: black;
   margin-top: calc(50% - 1px);
-  -webkit-transition: background-color .2s;
   transition: background-color .2s;
 }
 
@@ -97,7 +92,6 @@ button {
   background-color: black;
   height: 2px;
   width: 100%;
-  -webkit-transition: all .2s;
   transition: all .2s;
 }
 
@@ -117,7 +111,6 @@ button {
   height: 100vh;
   background-color: #003366;
   z-index: 1;
-  -webkit-transition: all .2s;
   transition: all .2s;
 }
 
@@ -195,24 +188,20 @@ button {
 }
 
 .difficulty__label--pilgrim {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 51, 102, 0.7)), to(rgba(0, 204, 102, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(0, 51, 102, 0.7), rgba(0, 204, 102, 0.7));
   margin-right: 2rem;
 }
 
 .difficulty__label--voyageur {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 204, 102, 0.7)), to(rgba(204, 204, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(0, 204, 102, 0.7), rgba(204, 204, 0, 0.7));
 }
 
 .difficulty__label--stalker {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(204, 204, 0, 0.7)), to(rgba(230, 138, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(204, 204, 0, 0.7), rgba(230, 138, 0, 0.7));
   margin-right: 2rem;
 }
 
 .difficulty__label--interloper {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(230, 138, 0, 0.7)), to(rgba(204, 0, 0, 0.7)));
   background-image: linear-gradient(to bottom right, rgba(230, 138, 0, 0.7), rgba(204, 0, 0, 0.7));
 }
 
@@ -265,8 +254,7 @@ button {
 }
 
 .result__btn :active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .result__text {
@@ -294,8 +282,7 @@ button {
   padding: 3rem;
   background-color: white;
   color: #4d4d4d;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 5px;
 }
 
@@ -478,13 +465,18 @@ button {
     display: block;
   }
   .location__label--indoors {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .result {
+    height: 3.5rem;
   }
   .result__btn {
     padding: .7rem 1.4rem;
+    margin-right: 2rem;
   }
   .result__text {
-    font-size: 2.5rem;
+    display: inline-block;
+    font-size: 1.9rem;
   }
 }
 /*# sourceMappingURL=app.css.map */
